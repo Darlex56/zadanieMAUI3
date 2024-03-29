@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_zadanie3.MainPage">
+
+
+    <StackLayout>
+        <BoxView HeightRequest="0.5" Color="Grey"/>
+
+        <ListView x:Name="ContactList" ItemsSource="{Binding Contact}" ItemSelected="ContactList_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding Image}">
+                            <Image.Clip>
+                                <EllipseGeometry RadiusX="15"
+                                    RadiusY="15"
+                                    Center="20,20" />
+                            </Image.Clip>
+                        </Image>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Sentence}" />
+                        </StackLayout>
+                    </StackLayout>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+           
+        </ListView>
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="10" BackgroundColor="#F9F8F9" >
+
+            <StackLayout>
+            <ImageButton Source="https://w7.pngwing.com/pngs/760/539/png-transparent-favourite-outlined-heart-love-core-ui-outlined-icon.png" x:Name="Activities" Margin="70,0,0,0"/>
+                <Label Text="Activities" Margin="70,0,0,0" x:Name="bottomActivities" TextColor="Blue"/>
+            </StackLayout>
+
+            <StackLayout Padding="50,0,0,0">
+            <ImageButton Source="https://banner2.cleanpng.com/20180326/pte/kisspng-computer-icons-user-ios-7-profile-5ab916949fe654.118757731522079380655.jpg" x:Name="Profil" Margin="70,0,0,0" Clicked="Profil_Clicked"/>
+            <Label Text="Profil"  Margin="75,0,0,0"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>
